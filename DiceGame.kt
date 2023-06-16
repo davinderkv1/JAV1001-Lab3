@@ -3,9 +3,9 @@ package game
 class DiceGame() {
 
     fun run() {
-        println("1. Create different size dice using each constructor and roll them")
+        println("1. Create different size dice using each constructor and roll them") 
         println("2. Choose one Die object and set it to show its highest value")
-        println("3. Create 5 six-sided dice. Roll each Die in a loop until you get 5 of a kind")
+        println("3. TO 5 six-sided dice. Roll each Die in a loop until you get 5 of a kind and count iterations")
         print("Please choose an option: ")
         val userInput = readLine()?.toIntOrNull()
         when (userInput) {
@@ -26,19 +26,19 @@ class DiceGame() {
 
     private fun createAndRollDifferentSizedDice() {
         println("Creating default die...")
-        val die1 = Die()
+        val die1 = Die()                                //created three dice with diferent constructors
         println("Creating a die with 20 sides...")
         val die2 = Die(Sides.TWENTY)
         println("Creating a Red die with 4 sides\n")
         val die3 = Die(Color.RED, Sides.FOUR)
-        println(die1)
+        println(die1)                                   //printed dices values before roll
         println(die2)
         println(die3)
         println("\nTesting roll method\n")
         println("Rolling die1..")
         println("Rolling die2..")
         println("Rolling die3..")
-        die1.roll()
+        die1.roll()                                         // TO roll dices
         die2.roll()
         die3.roll()
         println("\nNew upside in die1 is: ${die1.sideUp}\n")
@@ -54,13 +54,16 @@ class DiceGame() {
         val die4 = Die()
         val die5 = Die()
         var count = 0
-        while (!(die1.sideUp == die2.sideUp && die2.sideUp == die3.sideUp && die3.sideUp == die4.sideUp && die4.sideUp == die5.sideUp)) {
+        while (!(die1.sideUp == die2.sideUp 
+                && die2.sideUp == die3.sideUp 
+                && die3.sideUp == die4.sideUp 
+                && die4.sideUp == die5.sideUp)) {
             die1.roll()
             die2.roll()
             die3.roll()
             die4.roll()
             die5.roll()
-            count++
+            count++                                             //count of iterations
         }
         println("Number of rolls to get 5 of a kind: $count")
     }

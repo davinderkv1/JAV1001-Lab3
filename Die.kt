@@ -16,6 +16,12 @@ enum class Sides(val value: Int) {
     SIX(6),
     TWENTY(20)
 }
+/* 
+ Represents a die with different sides and colors.
+ 
+  @property color The color of the die.
+  @property numSides The number of sides on the die.
+ */
 
 // Primary constructor is in the class signature
 class Die(private val color: Color, private val numSides: Sides) {
@@ -34,7 +40,7 @@ class Die(private val color: Color, private val numSides: Sides) {
     fun roll() {
         sideUp = Random.nextInt(1, numSides.value + 1) 
     }
-
+    // function to return highest value of a die
     fun highestValue(): Int{
         return numSides.value
     }
