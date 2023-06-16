@@ -35,6 +35,12 @@ class Die(private val color: Color, private val numSides: Sides) {
         sideUp = Random.nextInt(1, numSides.value + 1) 
     }
 
+    fun highestValue(): Int{
+        return numSides.value
+    }
+
+        
+    
     override fun toString(): String {
         return "A ${color.name.lowercase()} die with ${numSides.value} faces and currently showing a $sideUp."
     }
