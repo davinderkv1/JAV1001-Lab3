@@ -32,7 +32,6 @@ class Die(private val color: Color, private val numSides: Sides) {
     constructor(numSides: Sides): this(Color.WHITE, numSides)
 
     fun roll() {
-        println("rolling the die")
         sideUp = Random.nextInt(1, numSides.value + 1) 
     }
 
