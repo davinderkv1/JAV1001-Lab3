@@ -30,7 +30,6 @@ class Die(private val color: Color, private val numSides: Sides) {
     // Secondary constructors that call the primary constructor
     constructor(): this(Color.WHITE, Sides.SIX)
     constructor(numSides: Sides): this(Color.WHITE, numSides)
-    constructor(color: Color, numSides: Sides) : this(color, numSides)
 
     fun roll() {
         println("rolling the die")
